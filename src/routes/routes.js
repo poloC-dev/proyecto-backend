@@ -19,7 +19,6 @@ router.post(
   body("lastname").isLength({ min: 3, max: 15 }),
   body("age").isNumeric({ min: 1, max: 100 }),
   body("ocupation").isLength({ min: 4, max: 25 }),
-  validator,
   addCharacterController
 );
 router.delete("/character/:name", deleteCharacterController);
