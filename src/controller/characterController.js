@@ -16,8 +16,8 @@ const getCharacterController = async (req, res) => {
 
 const getCharacterByCharacterNameController = async (req, res) => {
   try {
-    const characters = await getCharacterByCharacterNameService(req);
-    res.json(characters);
+    const character = await getCharacterByCharacterNameService(req);
+    res.json(character);
   } catch (error) {
     console.log(error);
     res.json({ message: error.message });
@@ -32,7 +32,7 @@ const addCharacterController = async (req, res) => {
       .json({ message: `Se ha creado el personaje ${addChar.name}` });
   } catch (error) {
     console.log(error);
-    res.json({ message: error.message });
+    res.json({ message: "Ya existe ese personaje" });
   }
 };
 
@@ -42,7 +42,7 @@ const updateCharacterController = async (req, res) => {
     res.status(200).json({ message: `Se modifico el usuario ${updateUser}` });
   } catch (error) {
     console.log(error);
-    res.json({ message: error.message });
+    res.json({ message: "No se pudo actualizar ese personaje" });
   }
 };
 
@@ -52,7 +52,7 @@ const deleteCharacterController = async (req, res) => {
     res.json({ message: `Personaje ${delChar} eliminado con exito` });
   } catch (error) {
     console.log(error);
-    res.json({ message: error.message });
+    res.json({ message: "No existe ese personaje" });
   }
 };
 

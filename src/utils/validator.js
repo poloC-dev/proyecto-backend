@@ -6,5 +6,16 @@ const validator = async (req, res, next) => {
   next();
 };
 
+// const validator = async (req, res, next) => {
+//   const errors = validationResult(req);
+//   if (!errors.isEmpty()) {
+//     console.log(req.body);
+//     const valores = req.body;
+//     const validaciones = errors.array();
+//     res.render("index", { validaciones: validaciones, valores: valores });
+//   } else {
+//     res.send("Validacion completada!");
+//     next();
+//   }
+// };
 module.exports = validator;
-// crear un middleware propio, no usar el de arriba

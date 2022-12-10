@@ -18,6 +18,10 @@ const PersonajeSchema = new Schema({
     type: String,
     required: [true, "La ocupacion del personaje es obligatoria"],
   },
+  quote: {
+    type: Array,
+    required: [true, "La quote del personaje es obligatoria"],
+  },
   created_at: { type: Date, default: new Date() },
 });
 
